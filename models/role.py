@@ -10,6 +10,6 @@ class Role(Base):
     night_availability: Mapped[bool] = mapped_column()
     created_at: Mapped[str] = mapped_column(String(100), nullable=False, default=datetime.now)
     updated_at: Mapped[str] = mapped_column(String(100), nullable=True)
+    badge_readers = relationship('BadgeReader', secondary=badge_readers_roles, back_populates='roles' ) # badge_reader n-n role
     user = relationship("User", back_populates="role") # user n-1 role
     sector = relationship("Sector", back_populates="role") # sector n-1 role
-    badge_readers = relationship('BadgeReader', secondary=badge_readers_roles, back_populates='roles' ) # badge_reader n-n role

@@ -11,4 +11,4 @@ class Access(Base):
     badge_id: Mapped[int] = mapped_column(ForeignKey("badges.id")) # badge utilizzato per lo scan
     badge_reader_id: Mapped[int] = mapped_column(ForeignKey("badge_readers.id")) # badge reader che ha effettuato lo scan
     badge = relationship("Badge", back_populates="access") # access 1-n badge
-    badge_reader = relationship("Badge_Reader", back_populates="access") # access 1-n b_r
+    badge_reader = relationship("BadgeReader", back_populates="access") # access 1-n b_r

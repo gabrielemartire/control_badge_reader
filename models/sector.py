@@ -12,3 +12,4 @@ class Sector(Base):
     updated_at: Mapped[str] = mapped_column(String(100), nullable=True)
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id")) # ruolo responsabile del setore
     role = relationship("Role", back_populates="sector") # sector n-1 role
+    badge_reader = relationship("BadgeReader", back_populates="sector")

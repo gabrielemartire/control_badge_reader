@@ -23,7 +23,7 @@ Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che han
 
 ## CRUD role
 for r in ROLES:
- create_role(session=session, role_info= r)
+    create_role(session=session, role_info = r)
 ##print(retrive_role(session=session, id=1))
 ##update_role(session=session, id=1, role_info={"night_availability": True})
 ##delete_role(session=session, id=2)

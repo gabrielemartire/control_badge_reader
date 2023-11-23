@@ -9,7 +9,7 @@ def create_user(session: Session, user_info: dict):
 
 def retrive_user(session: Session, id: int):
     sql_statement = select(User).where(User.id== id)
-    user = session.scalars(sql_statement).one()
+    user = session.scalars(sql_statement).one_or_none()
     return user.__dict__
 
 def update_user(session: Session, id: int, user_info: dict):
@@ -18,7 +18,7 @@ def update_user(session: Session, id: int, user_info: dict):
     session.execute(sql_statement)
     session.commit()
     sql_statement = select(User).where(User.id== id)
-    user_updated = session.scalars(sql_statement).one()
+    user_updated = session.scalars(sql_statement).one_or_none()
     return user_updated.__dict__
 
 #def delete_user(session: Session, id: int):

@@ -9,7 +9,7 @@ def create_role(session: Session, role_info: dict):
 
 def retrive_role(session: Session, id: int):
     sql_statement = select(Role).where(Role.id== id)
-    role = session.scalars(sql_statement).one()
+    role = session.scalars(sql_statement).one_or_none()
     return role.__dict__
 
 def update_role(session: Session, id: int, role_info: dict):
@@ -18,7 +18,7 @@ def update_role(session: Session, id: int, role_info: dict):
     session.execute(sql_statement)
     session.commit()
     sql_statement = select(Role).where(Role.id== id)
-    role_updated = session.scalars(sql_statement).one()
+    role_updated = session.scalars(sql_statement).one_or_none()
     return role_updated.__dict__
 
 def delete_role(session: Session, id: int):

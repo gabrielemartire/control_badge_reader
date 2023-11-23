@@ -9,7 +9,7 @@ def create_badge_reader(session: Session, badge_reader_info: dict):
 
 def retrive_badge_reader(session: Session, id: int):
     sql_statement = select(BadgeReader).where(BadgeReader.id== id)
-    badge_reader = session.scalars(sql_statement).one()
+    badge_reader = session.scalars(sql_statement).one_or_none()
     return badge_reader.__dict__
 
 def update_badge_reader(session: Session, id: int, badge_reader_info: dict):
@@ -18,7 +18,7 @@ def update_badge_reader(session: Session, id: int, badge_reader_info: dict):
     session.execute(sql_statement)
     session.commit()
     sql_statement = select(BadgeReader).where(BadgeReader.id== id)
-    badge_reader_updated = session.scalars(sql_statement).one()
+    badge_reader_updated = session.scalars(sql_statement).one_or_none()
     return badge_reader_updated.__dict__
 
 def delete_badge_reader(session: Session, id: int):

@@ -9,7 +9,7 @@ def create_sector(session: Session, sector_info: dict):
 
 def retrive_sector(session: Session, id: int):
     sql_statement = select(Sector).where(Sector.id== id)
-    sector = session.scalars(sql_statement).one()
+    sector = session.scalars(sql_statement).one_or_none()
     return sector.__dict__
 
 def update_sector(session: Session, id: int, sector_info: dict):
@@ -18,7 +18,7 @@ def update_sector(session: Session, id: int, sector_info: dict):
     session.execute(sql_statement)
     session.commit()
     sql_statement = select(Sector).where(Sector.id== id)
-    sector_updated = session.scalars(sql_statement).one()
+    sector_updated = session.scalars(sql_statement).one_or_none()
     return sector_updated.__dict__
 
 def delete_sector(session: Session, id: int):

@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 # when user get in
 def create_access(session: Session, access_info: dict):
+    access_info["timestamp_in"] = datetime.now() # todo sistemare SOLO SE l'UTENTE e' AUTORIZZATO altrimenti timestamp_in e timestamp_out saranno None
     session.add(Access(**access_info))
     session.commit()
 

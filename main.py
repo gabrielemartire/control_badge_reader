@@ -22,8 +22,8 @@ session = Session(bind=engine)
 Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che hanno ereditato Base
 
 ## CRUD role
-for r in ROLES:
-    create_role(session=session, role_info = r)
+#for r in ROLES:
+#    create_role(session=session, role_info = r)
 ##print(retrive_role(session=session, id=1))
 ##update_role(session=session, id=1, role_info={"night_availability": True})
 ##delete_role(session=session, id=2)
@@ -54,15 +54,12 @@ for r in ROLES:
 #delete_badge(session=session, id=2)
 
 # CRUD badge_readers_roles
-#for rbr in BADGE_READERS_ROLES:
-#    create_badge_reader_role(session=session, role_badge_reader_info= rbr)
+#for brr in BADGE_READERS_ROLES:
+#    create_badge_reader_role(session=session, badge_reader_role_info= brr)
 
 # CRUD accesses
 #for a in ACCESSES:
 #    create_access(session=session, access_info=a)
-
-#print(retrive_badge(session=session, id=1))
-#update_badge(session=session, id=1, data_info={"user_id": "2"})
-#delete_badge(session=session, id=2)
+# todo *RUD of CRUD
 
 

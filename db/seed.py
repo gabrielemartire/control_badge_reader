@@ -286,9 +286,57 @@ BADGE_READERS_ROLES = [
 ACCESSES = [
     {
     "id": 1,
-    "timestamp_in": "2023-11-21 22:27:52.058918",
-    "timestamp_out": "2023-11-22 13:47:52.058918",
-    "badge_id": 1,
-    "badge_reader_id": 1
+    "timestamp_in": "2023-11-12 04:27:52.058918",
+    "timestamp_out": None,
+    "badge_id": 6, #badge_id: 6 -> Helen Marshall - Visitor
+    "badge_reader_id": 9 #id: 9 -> Ashtray Lab
+    },{
+    "id": 2,
+    "timestamp_in": "2023-11-22 12:27:52.058918",
+    "timestamp_out": "2023-11-22 14:47:52.058918",
+    "badge_id": 1, # Jesse Faden
+    "badge_reader_id": 1 # Nostalgic Cafe
+    },{
+    "id": 3,
+    "timestamp_in": "2023-11-22 14:57:52.058918",
+    "timestamp_out": "2023-11-23 03:47:52.058918",
+    "badge_id": 1, # Jesse Faden
+    "badge_reader_id": 3 # Director office
+    },{
+    "id": 4,
+    "timestamp_in": "2023-11-23 08:27:52.058918",
+    "timestamp_out": "2023-11-23 17:27:52.058918",
+    "badge_id": 3, # Emily Pope, Dr
+    "badge_reader_id": 7 # Parapsychology
+    },{
+    "id": 5,
+    "timestamp_in": None, # user not authorized 
+    "timestamp_out": None,
+    "badge_id": 2, #badge_id: 2 -> Zachariah Trench - Visitor
+    "badge_reader_id": 12 #id: 12 -> Security
+    },{
+    "id": 6,
+    "timestamp_in": "2023-11-25 22:27:52.058918",
+    "timestamp_out": "2023-11-26 12:33:52.058918",
+    "badge_id": 7, #badge_id: 7 -> Dale Cooper - Security Chief
+    "badge_reader_id": 10 #id: 10 -> Control room
+    },{
+    "id": 7,
+    "timestamp_in": "2023-11-27 09:27:52.058918",
+    "timestamp_out": None,
+    "badge_id": 3, #badge_id: 3 -> Emily Pope, Dr - Head of Research
+    "badge_reader_id": 5 #id: 5 -> Quarry
+    },{
+    "id": 8,
+    "timestamp_in": "2023-11-27 07:01:52.058918",
+    "timestamp_out": "2023-11-27 07:56:52.058918",
+    "badge_id": 5, #badge_id: 5 -> Jeremy Clarkson - Janitor
+    "badge_reader_id": 1 #id: 1 -> Nostalgic Cafe
+    },{
+    "id": 8,
+    "timestamp_in": "2023-11-27 07:57:52.058918",
+    "timestamp_out": None,
+    "badge_id": 5, #badge_id: 5 -> Jeremy Clarkson - Janitor
+    "badge_reader_id": 4 #id: 4 -> Ventilation
     }
 ]

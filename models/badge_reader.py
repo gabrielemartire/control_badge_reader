@@ -6,11 +6,11 @@ from datetime import datetime, timedelta
 class BadgeReader(Base):
     __tablename__ = "badge_readers"
     id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
-    label: Mapped[str] = mapped_column(String(100), nullable=False)
+    label: Mapped[str] = mapped_column(String(30), nullable=False)
     restricted: Mapped[bool] = mapped_column(default=False)
-    maintenance_at: Mapped[str] = mapped_column(String(100), nullable=False, default=(datetime.now() + timedelta(days=365 * 2)))
-    created_at: Mapped[str] = mapped_column(String(100), nullable=False, default=datetime.now)
-    updated_at: Mapped[str] = mapped_column(String(100), nullable=True)
+    maintenance_at: Mapped[str] = mapped_column(String(30), nullable=False, default=(datetime.now() + timedelta(days=365 * 2)))
+    created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
+    updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
     sector_id: Mapped[int] = mapped_column(ForeignKey("sectors.id"))
     roles = relationship('Role', secondary=badge_readers_roles, back_populates='badge_readers') # badge reader n-n roles
     access = relationship("Access", back_populates="badge_reader") # badge reader 1-n access

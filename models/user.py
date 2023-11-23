@@ -6,10 +6,10 @@ from datetime import datetime
 class User(Base):
     __tablename__ = "users"
     id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
-    full_name: Mapped[str] = mapped_column(String(100), nullable=False)
+    full_name: Mapped[str] = mapped_column(String(30), nullable=False)
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id"))
-    created_at: Mapped[str] = mapped_column(String(100), nullable=False, default=datetime.now)
-    updated_at: Mapped[str] = mapped_column(String(100), nullable=True)
-    deleted_at: Mapped[str] = mapped_column(String(100), nullable=True)
+    created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
+    updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
+    deleted_at: Mapped[str] = mapped_column(String(30), nullable=True)
     role = relationship("Role", back_populates="user") # user 1-n role 
     badge = relationship('Badge', back_populates='user', uselist=False, cascade='all, delete-orphan') # user 1-n badge

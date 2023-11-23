@@ -6,10 +6,10 @@ from datetime import datetime
 class Sector(Base):
     __tablename__ = "sectors"
     id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
-    label: Mapped[str] = mapped_column(String(100), nullable=False)
+    label: Mapped[str] = mapped_column(String(30), nullable=False)
     under_uta_control: Mapped[bool] = mapped_column(default=True)
-    created_at: Mapped[str] = mapped_column(String(100), nullable=False, default=datetime.now)
-    updated_at: Mapped[str] = mapped_column(String(100), nullable=True)
+    created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
+    updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id")) # ruolo responsabile del setore
     role = relationship("Role", back_populates="sector") # sector n-1 role
     badge_reader = relationship("BadgeReader", back_populates="sector")

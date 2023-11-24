@@ -7,7 +7,7 @@ from actions.crud_sector import create_sector, retrive_sector, update_sector, de
 from actions.crud_role import create_role, retrive_role, update_role, delete_role
 from actions.crud_access import create_access, retrive_access, update_access
 from actions.crud_badge_reader_role import create_badge_reader_role
-from db.seed import USERS, BADGES, ROLES, SECTORS, BADGE_READERS, WARNINGS, BADGE_READERS_ROLES, ACCESSES
+from db.seed import USERS, BADGES, ROLES, SECTORS, BADGE_READERS, WARNINGS, BADGE_READERS_ROLES, ACCESSES, BADGE_READERS_WARNINGS
 from models.base import Base
 from datetime import datetime
 from models.user import User
@@ -20,6 +20,14 @@ from models.access import Access
 engine = create_engine("mysql+pymysql://root:Password123!@127.0.0.1/db")
 session = Session(bind=engine)
 Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che hanno ereditato Base
+
+print("""
+    Gabriele Martire
+    matricola: IN09000637
+    CORSO DI STUDI IN INGEGNERIA INDUSTRIALE Classe L-9
+    Etivity per ‘Basi di Dati’
+    CONTROL BADGE RE▲DER SYSTEM
+""")
 
 ## CRUD role
 #for r in ROLES:
@@ -38,9 +46,9 @@ Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che han
 # CRUD badge
 #for b in BADGES:
 #    create_badge(session=session, badge_info= b)
-#print(retrive_badge(session=session, id=1))
-#update_badge(session=session, id=1, badge_info={"user_id": "2"})
-#delete_badge(session=session, id=2)
+#print(retrive_badge(session=session, badge_id = 1))
+#update_badge(session=session, badge_id = 1, badge_info={"user_id": "2"})
+#delete_badge(session=session, badge_id = 2)
 
 # CRUD sector
 #for s in SECTORS:
@@ -63,3 +71,6 @@ Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che han
 # todo *RUD of CRUD
 
 
+# CRUD badge_readers_warnings
+#for brr in BADGE_READERS_WARNINGS:
+#    create_badge_reader_warning(session=session, badge_reader_warning_info= brr)

@@ -103,75 +103,51 @@ BADGE_READERS = [
     {
         "id": 1,
         "label": "Nostalgic Cafe",
-        "sector_id": 1,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 1
     },{
         "id": 2,
         "label": "Board room",
-        "sector_id": 1,
-        "restricted": True,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 1
     },{
         "id": 3,
         "label": "Director office",
-        "sector_id": 1,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 1
     },{
         "id": 4,
         "label": "Ventilation",
-        "sector_id": 2,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 2
     },{
         "id": 5,
         "label": "Quarry",
-        "sector_id": 2,
-        "restricted": True,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 2
     },{
         "id": 6,
         "label": "Field training",
-        "sector_id": 2,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 2
     },{
         "id": 7,
         "label": "Parapsychology",
-        "sector_id": 3,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 3
     },{
         "id": 8,
         "label": "HRA Lab",
-        "sector_id": 3,
-        "restricted": True,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 3
     },{
         "id": 9,
         "label": "Ashtray Lab",
-        "sector_id": 3,
-        "restricted": True,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 3
     },{
         "id": 10,
         "label": "Control room",
-        "sector_id": 4,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 4
     },{
         "id": 11,
         "label": "Shelter",
-        "sector_id": 4,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 4
     },{
         "id": 12,
         "label": "Security",
-        "sector_id": 4,
-        "restricted": False,
-        "maintenance_at": "2023-11-17 15:30:00.123456"
+        "sector_id": 4
     },
 ]
 
@@ -339,4 +315,47 @@ ACCESSES = [
     "badge_id": 5, #badge_id: 5 -> Jeremy Clarkson - Janitor
     "badge_reader_id": 4 #id: 4 -> Ventilation
     }
+]
+
+WARNINGS = [
+    {
+       "id": 1,
+       "code_name": "Polaris",
+       "description": "High Concentration Resonance-base"
+    },{
+       "id": 2,
+       "code_name": "Hedron",
+       "description": "Mold Spores - deprecated in 03/23/87"
+    },{
+       "id": 3,
+       "code_name": "The Hiss",
+       "description": "Uncontrolled Loss"
+    }
+]
+
+
+
+BADGE_READERS_WARNINGS = [
+    {
+       "warning_id": 1, # Polaris: High Concentration Resonance-base
+       "badge_reader_id": 5 # Quarry
+    },{
+       "warning_id": 1, # Polaris: High Concentration Resonance-base
+       "badge_reader_id": 9  # Ashtray Lab
+    },{
+       "warning_id": 2, # Hedron: Mold Spores - deprecated in 03/23/87
+       "badge_reader_id": 1 # Nostalgic Cafe
+    },{
+       "warning_id": 2, # Hedron: Mold Spores - deprecated in 03/23/87
+       "badge_reader_id": 11 # Shelter
+    },{
+       "warning_id": 3, # The Hiss: Uncontrolled Loss
+       "badge_reader_id": 6 # Field training
+    },{
+       "warning_id": 3, # The Hiss: Uncontrolled Loss
+       "badge_reader_id": 4 # Ventilation
+    },{
+       "warning_id": 3, # The Hiss: Uncontrolled Loss
+       "badge_reader_id": 9  # Ashtray Lab
+    },
 ]

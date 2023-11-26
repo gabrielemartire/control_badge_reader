@@ -14,4 +14,4 @@ class BadgeReader(Base):
     access = relationship("Access", back_populates="badge_reader") # badge reader 1-n access
     sector = relationship("Sector", back_populates="badge_reader") # badge reader n-1 sector
     roles = relationship('Role', secondary=badge_readers_roles, back_populates='badge_readers') # badge reader n-n roles
-    warning = relationship('Warning', secondary=badge_readers_warnings, back_populates='badge_readers') # badge reader n-n warnings
+    warnings = relationship('Warning', secondary=badge_readers_warnings, back_populates='badge_readers') # badge reader n-n warnings

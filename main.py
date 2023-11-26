@@ -6,7 +6,9 @@ from actions.crud_badge_reader import create_badge_reader, retrive_badge_reader,
 from actions.crud_sector import create_sector, retrive_sector, update_sector, delete_sector
 from actions.crud_role import create_role, retrive_role, update_role, delete_role
 from actions.crud_access import create_access, retrive_access, update_access
+from actions.crud_warning import create_warning, retrive_warning, update_warning
 from actions.crud_badge_reader_role import create_badge_reader_role
+from actions.crud_badge_reader_warning import create_badge_reader_warning
 from db.seed import USERS, BADGES, ROLES, SECTORS, BADGE_READERS, WARNINGS, BADGE_READERS_ROLES, ACCESSES, BADGE_READERS_WARNINGS
 from models.base import Base
 from datetime import datetime
@@ -66,11 +68,17 @@ print("""
 #    create_badge_reader_role(session=session, badge_reader_role_info= brr)
 
 # CRUD accesses
+#for a in WARNINGS:
+#    create_warning(session=session, warning_info=a)
+# todo *RUD of CRUD
+
+
+# CRUD accesses
 #for a in ACCESSES:
 #    create_access(session=session, access_info=a)
 # todo *RUD of CRUD
 
 
 # CRUD badge_readers_warnings
-#for brr in BADGE_READERS_WARNINGS:
-#    create_badge_reader_warning(session=session, badge_reader_warning_info= brr)
+#for brw in BADGE_READERS_WARNINGS:
+#    create_badge_reader_warning(session=session, badge_reader_warning_info= brw)

@@ -7,7 +7,7 @@ def create_badge(session: Session, badge_info: dict):
     session.add(Badge(**badge_info))
     session.commit()
 
-def retrive_badge(session: Session, badge_id: int):
+def retrieve_badge(session: Session, badge_id: int):
     sql_statement = select(Badge).where(Badge.id == badge_id)
     badge = session.scalars(sql_statement).one_or_none()
     badge.__dict__["user"] = badge.user.full_name
@@ -26,4 +26,4 @@ def delete_badge(session: Session, badge_id: int):
     sql_statement = delete(Badge).where(Badge.id == badge_id)
     session.execute(sql_statement)
     session.commit()
-    return id
+    return badge_id

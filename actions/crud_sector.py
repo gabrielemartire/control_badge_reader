@@ -7,7 +7,7 @@ def create_sector(session: Session, sector_info: dict):
     session.add(Sector(**sector_info))
     session.commit()
 
-def retrive_sector(session: Session, id: int):
+def retrieve_sector(session: Session, id: int):
     sql_statement = select(Sector).where(Sector.id== id)
     sector = session.scalars(sql_statement).one_or_none()
     return sector.__dict__

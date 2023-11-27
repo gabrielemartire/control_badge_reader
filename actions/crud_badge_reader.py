@@ -7,7 +7,7 @@ def create_badge_reader(session: Session, badge_reader_info: dict):
     session.add(BadgeReader(**badge_reader_info))
     session.commit()
 
-def retrive_badge_reader(session: Session, id: int):
+def retrieve_badge_reader(session: Session, id: int):
     sql_statement = select(BadgeReader).where(BadgeReader.id== id)
     badge_reader = session.scalars(sql_statement).one_or_none()
     return badge_reader.__dict__

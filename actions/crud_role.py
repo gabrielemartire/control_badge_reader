@@ -7,7 +7,7 @@ def create_role(session: Session, role_info: dict):
     session.add(Role(**role_info))
     session.commit()
 
-def retrive_role(session: Session, id: int):
+def retrieve_role(session: Session, id: int):
     sql_statement = select(Role).where(Role.id== id)
     role = session.scalars(sql_statement).one_or_none()
     return role.__dict__

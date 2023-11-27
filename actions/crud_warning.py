@@ -7,7 +7,7 @@ def create_warning(session: Session, warning_info: dict): #todo
     session.add(Warning(**warning_info))
     session.commit()
 
-def retrive_warning(session: Session, id: int): #todo
+def retrieve_warning(session: Session, id: int): #todo
     sql_statement = select(Warning).where(Warning.id== id)
     warning = session.scalars(sql_statement).one_or_none()
     return warning.__dict__

@@ -17,7 +17,7 @@ C:\Users\GM\Desktop\code>pip install SQLAlchemy
 ```
 ### cryptography 
 > [!WARNING]
-> may also require cryptography to be installed
+> may also require cryptography to be installed.
 ```
 C:\Users\GM\Desktop\code>pip install cryptography
 ```
@@ -55,29 +55,27 @@ available actions:
 0 - back
 select action:
 ```
-at this point by following the instructions on the screen you can complete the requested operation
+at this point by following the instructions on the screen you can complete the requested operation.
 > _for example enter (action=1) with a 'Security Chief' badge (id=5) in the 'Control room' area (id=10)_
 ```python
 select action: 1
 insert badge id: 5
 insert badge reader id: 10
 ```
-obtaining authorization to enter
+obtaining authorization to enter:
 ```python
 authorized
 ```
 3) ### seed
 > [!IMPORTANT]
-> It is also possible to use seed to quickly generate useful data with different combinations of values for test 
+> It is also possible to use seed to quickly generate useful data with different combinations of values for test.
 ```python
 # SEED USERS
 for u in USERS:
    create_user(session = session, user_info = u)
 ```
-by selecting option `9` in 'models menu'
+by selecting option `9` in 'models menu':
 ```
 data creation from seed finished
 ```
-once the data has been created, a confirmation message will be shown
-
-_Gabriele Martire_
+once the data has been created, a confirmation message will be shown.

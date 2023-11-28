@@ -10,7 +10,7 @@ def create_user(session: Session, user_info: dict):
 def retrieve_user(session: Session, id: int):
     sql_statement = select(User).where(User.id== id)
     user = session.scalars(sql_statement).one_or_none()
-    return user.__dict__
+    return user.__dict__ if user is not None else None
 
 def update_user(session: Session, id: int, user_info: dict):
     user_info["updated_at"] = datetime.now()
@@ -19,7 +19,7 @@ def update_user(session: Session, id: int, user_info: dict):
     session.commit()
     sql_statement = select(User).where(User.id== id)
     user_updated = session.scalars(sql_statement).one_or_none()
-    return user_updated.__dict__
+    return user_updated.__dict__ if user_updated is not None else None
 
 def delete_user(session: Session, id: int):
     user = session.query(User).get(id)

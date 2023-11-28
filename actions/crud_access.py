@@ -26,8 +26,8 @@ def create_access(session: Session, access_info: dict):
 
     session.commit()
 
-def retrieve_access(session: Session, id: int):
-    sql_statement = select(Access).where(Access.id == id)
+def retrieve_access(session: Session, badge_id: int, badge_reader_id: int):
+    sql_statement = select(Access).where(Access.badge_id == badge_id).where(Access.badge_reader_id == badge_reader_id)
     access = session.scalars(sql_statement).one_or_none()
     return access.__dict__ if access is not None else None
 
@@ -39,4 +39,4 @@ def update_access(session: Session, badge_id: int, badge_reader_id: int, access_
     session.commit()
     sql_statement = select(Access).where(Access.badge_id == badge_id).where(Access.badge_reader_id == badge_reader_id)
     access_updated = session.scalars(sql_statement).one_or_none()
-    return access_updated.__dict__
+    return access_updated.__dict__ if access_updated is not None else None

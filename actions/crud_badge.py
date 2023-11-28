@@ -20,7 +20,7 @@ def update_badge(session: Session, badge_id: int, badge_info: dict):
     session.commit()
     sql_statement = select(Badge).where(Badge.id == badge_id)
     badge_updated = session.scalars(sql_statement).one_or_none()
-    return badge_updated.__dict__
+    return badge_updated.__dict__ if badge_updated is not None else None
 
 def delete_badge(session: Session, badge_id: int):
     sql_statement = delete(Badge).where(Badge.id == badge_id)

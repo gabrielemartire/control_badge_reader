@@ -333,8 +333,6 @@ WARNINGS = [
     }
 ]
 
-
-
 BADGE_READERS_WARNINGS = [
     {
        "warning_id": 1, # Polaris: High Concentration Resonance-base

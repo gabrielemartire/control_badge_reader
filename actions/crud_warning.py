@@ -7,22 +7,22 @@ def create_warning(session: Session, warning_info: dict): #todo
     session.add(Warning(**warning_info))
     session.commit()
 
-def retrieve_warning(session: Session, id: int): #todo
-    sql_statement = select(Warning).where(Warning.id== id)
+def retrieve_warning(session: Session, warning_id: int): #todo
+    sql_statement = select(Warning).where(Warning.id== warning_id)
     warning = session.scalars(sql_statement).one_or_none()
-    return warning.__dict__
+    return warning.__dict__ if warning is not None else None
 
-def update_warning(session: Session, id: int, warning_info: dict): #todo
+def update_warning(session: Session, warning_id: int, warning_info: dict): #todo
     warning_info["updated_at"] = datetime.now()
-    sql_statement = update(Warning).where(Warning.id== id).values(**warning_info)
+    sql_statement = update(Warning).where(Warning.id== warning_id).values(**warning_info)
     session.execute(sql_statement)
     session.commit()
-    sql_statement = select(Warning).where(Warning.id== id)
+    sql_statement = select(Warning).where(Warning.id== warning_id)
     warning_updated = session.scalars(sql_statement).one_or_none()
-    return warning_updated.__dict__
+    return warning_updated.__dict__ if warning_updated is not None else None
 
-def delete_warning(session: Session, id: int): #todo
-    sql_statement = delete(Warning).where(Warning.id== id)
+def delete_warning(session: Session, warning_id: int): #todo
+    sql_statement = delete(Warning).where(Warning.id== warning_id)
     session.execute(sql_statement)
     session.commit()
-    return id
+    return warning_id

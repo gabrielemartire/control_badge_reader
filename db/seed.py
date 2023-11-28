@@ -151,22 +151,6 @@ BADGE_READERS = [
     },
 ]
 
-WARNINGS= [
-    {
-        "id": 1,
-        "code_name": "Radiactive Polaris",
-        "severity_lvl": 5,
-    },{
-        "id": 1,
-        "code_name": "Biohazard",
-        "severity_lvl": 4,
-    },{
-        "id": 1,
-        "code_name": "High Voltage",
-        "severity_lvl": 1,
-    },
-]
-
 BADGE_READERS_ROLES = [
     {
        "role_id": 1, #Director #Director

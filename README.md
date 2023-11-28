@@ -45,8 +45,7 @@ Once `main.py` is launched, the 'models menu' selection screen will be shown:
 0 - EXIT
 select model:
 ```
-Subsequently we will choose the action from those available (`5` in this example), for example 'access section';
-the 'available actions' selection screen will be shown:
+Subsequently we will choose the action from those available (`5 - ACCESS` in this example), after that the 'available actions' selection screen will be shown:
 ```python
 available actions:
 1 - ENTER A SPECIFICA AREA WITH A SPECIFIC BADGE (create new access)
@@ -55,14 +54,14 @@ available actions:
 0 - back
 select action:
 ```
-at this point by following the instructions on the screen you can complete the requested operation.
+At this point by following the instructions on the screen you can complete the requested operation.
 > _for example enter (action=1) with a 'Security Chief' badge (id=5) in the 'Control room' area (id=10)_
 ```python
 select action: 1
 insert badge id: 5
 insert badge reader id: 10
 ```
-obtaining authorization to enter:
+Obtaining authorization to enter:
 ```python
 authorized
 ```
@@ -74,8 +73,8 @@ authorized
 for u in USERS:
    create_user(session = session, user_info = u)
 ```
-by selecting option `9` in 'models menu':
+By selecting option `9 - SEEDs` in 'models menu':
 ```
 data creation from seed finished
 ```
-once the data has been created, a confirmation message will be shown.
+Once the data has been created, a confirmation message will be shown.

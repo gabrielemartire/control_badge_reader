@@ -32,56 +32,56 @@ print("""
 
 # CRUD ROLES
 #for r in ROLES:
-#    create_role(session=session, role_info = r)
-#print(retrieve_role(session=session, id=1))
-#update_role(session=session, id=1, role_info={"night_availability": True})
-#delete_role(session=session, id=2)
+#    create_role(session = session, role_info = r)
+#print(retrieve_role(session = session, role_id = 1))
+#update_role(session = session, role_id = 1, role_info = {"night_availability": True})
+#delete_role(session = session, role_id = 2)
 
 # CRUD USERS
 #for u in USERS:
-#    create_user(session=session, user_info= u)
-#print(retrieve_user(session=session, id=1))
-#update_user(session=session, id=1, user_info={"full_name": "Jesse Faden"})
-#delete_user(session=session, id=3)
+#    create_user(session = session, user_info = u)
+#print(retrieve_user(session = session, user_id = 1))
+#update_user(session = session, user_id = 1, user_info = {"full_name": "Jesse Faden"})
+#delete_user(session = session, user_id = 3)
 
 # CRUD BADGES
 #for b in BADGES:
-#    create_badge(session=session, badge_info= b)
-#print(retrieve_badge(session=session, badge_id = 1))
-#update_badge(session=session, badge_id = 1, badge_info={"user_id": "2"})
-#delete_badge(session=session, badge_id = 2)
+#    create_badge(session = session, badge_info = b)
+#print(retrieve_badge(session = session, badge_id = 1))
+#update_badge(session = session, badge_id = 1, badge_info = {"user_id": "2"})
+#delete_badge(session = session, badge_id = 2)
 
 # CRUD SECTORS
 #for s in SECTORS:
-#    create_sector(session=session, sector_info= s)
-#retrieve_sector(session=session, sector_id=1)
-#update_sector(session=session, sector_id=2, sector_info={"label": "Workshop sector"})
-#delete_sector(session=session, sector_id=1)
+#    create_sector(session = session, sector_info = s)
+#retrieve_sector(session = session, sector_id = 1)
+#update_sector(session = session, sector_id = 2, sector_info = {"label": "Workshop sector"})
+#delete_sector(session = session, sector_id = 1)
 
 # CRUD BADGE_READERS
 #for br in BADGE_READERS:
-#    create_badge_reader(session=session, badge_reader_info= br)
-#retrieve_badge_reader(session=session, badge_reader_id=1)
-#update_badge_reader(session=session, badge_reader_id=1, badge_reader_info={"label": "Main Entrance"})
-#delete_badge_reader(session=session, badge_reader_id=2)
+#    create_badge_reader(session = session, badge_reader_info = br)
+#retrieve_badge_reader(session = session, badge_reader_id = 1)
+#update_badge_reader(session = session, badge_reader_id = 1, badge_reader_info = {"label": "Main Entrance"})
+#delete_badge_reader(session = session, badge_reader_id = 2)
 
 # CRUD BADGE_READERS_ROLES (join table)
 #for brr in BADGE_READERS_ROLES:
-#    create_badge_reader_role(session=session, badge_reader_role_info= brr)
+#    create_badge_reader_role(session = session, badge_reader_role_info = brr)
 
 # CRUD WARNINGS
 #for w in WARNINGS:
-#    create_warning(session=session, warning_info= w)
-#retrieve_warning(session=session, warning_id=1)
-#update_warning(session=session, warning_id=1, warning_info={"code_name": "Toxic"})
-#delete_warning(session=session, warning_id=1)
+#    create_warning(session = session, warning_info = w)
+#retrieve_warning(session = session, warning_id = 1)
+#update_warning(session = session, warning_id = 2, warning_info = {"code_name": "Toxic"})
+#delete_warning(session = session, warning_id = 1)
 
 # CRUD ACCESSES
 #for a in ACCESSES:
-#    create_access(session=session, access_info= a)
-#retrieve_access(session=session, badge_id=2, badge_reader_id=4)
-#update_access(session=session, badge_id=2, badge_reader_id=4, access_info={"timestamp_out": datetime.now()})
+#    create_access(session = session, access_info = a)
+#retrieve_access(session = session, badge_id = 2, badge_reader_id = 4)
+#update_access(session = session, badge_id = 2, badge_reader_id = 4, access_info = {"timestamp_out": datetime.now()})
 
 # CRUD BADGE_READERS_WARNINGS (join table)
 #for brw in BADGE_READERS_WARNINGS:
-#    create_badge_reader_warning(session=session, badge_reader_warning_info= brw)
+#    create_badge_reader_warning(session = session, badge_reader_warning_info=brw)

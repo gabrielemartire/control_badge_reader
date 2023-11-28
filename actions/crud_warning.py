@@ -21,8 +21,7 @@ def update_warning(session: Session, warning_id: int, warning_info: dict): #todo
     warning_updated = session.scalars(sql_statement).one_or_none()
     return warning_updated.__dict__ if warning_updated is not None else None
 
-def delete_warning(session: Session, warning_id: int): #todo
-    sql_statement = delete(Warning).where(Warning.id== warning_id)
+def delete_warning(session: Session, warning_id: int):
+    sql_statement = update(Warning).where(Warning.id== warning_id).values({"deleted_at": datetime.now()})
     session.execute(sql_statement)
     session.commit()
-    return warning_id

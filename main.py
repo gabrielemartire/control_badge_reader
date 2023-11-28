@@ -25,11 +25,9 @@ session = Session(bind=engine)
 Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che hanno ereditato Base
 
 print("""
-    Gabriele Martire
-    matricola: IN09000637
-    CORSO DI STUDI IN INGEGNERIA INDUSTRIALE Classe L-9
-    Etivity per ‘Basi di Dati’
     CONTROL BADGE RE▲DER SYSTEM
+    Gabriele Martire 
+    matricola: IN09000637
 """)
 
 # CRUD ROLES

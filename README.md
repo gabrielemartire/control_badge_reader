@@ -8,19 +8,26 @@
 + Etivity 1-4 per ‘Basi di Dati’
 
 ## ***how to install?***
+### PyMySQL
 ```
-C:\Users\G\code>pip install PyMySQL
-C:\Users\G\code>pip install SQLAlchemy
-C:\Users\G\code>pip install cryptography
+C:\Users\GM\Desktop\code>pip install PyMySQL
 ```
-> [!IMPORTANT]
-> password db Password123!
-
+### SQLAlchemy
+```
+C:\Users\GM\Desktop\code>pip install SQLAlchemy
+```
+### cryptography 
+```
+C:\Users\GM\Desktop\code>pip install cryptography
+```
 ## ***how to use?***
+### activate _env_
 ```
-C:\Users\GM\Desktop>cd code
 C:\Users\GM\Desktop\code>env\Scripts\activate
 ```
+> [!IMPORTANT]
+> Uncomment the code you want to execute
+### execute code
 ```
 (env) C:\Users\GM\Desktop\code>python main.py
 ```

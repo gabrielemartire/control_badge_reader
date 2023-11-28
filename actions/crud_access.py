@@ -2,8 +2,7 @@ from datetime import datetime
 from models.access import Access
 from sqlalchemy import select, update, and_
 from sqlalchemy.orm import Session
-from models.badge import Badge 
-from models.user import User
+from models.badge import Badge
 from models.role import Role
 from models.badge_reader import BadgeReader
 

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine # Import the SQLAlchemy create_engine function to create a database engine.
 from sqlalchemy.orm import Session
 from models.base import Base
 from cli.role_cli import role_submenu
@@ -12,9 +12,9 @@ from cli.warning_cli import warning_submenu
 from db.use_seeds import use_seeds
 
 
-engine = create_engine("mysql+pymysql://root:Password123!@127.0.0.1/db")
-session = Session(bind=engine)
-Base.metadata.create_all(bind=engine) #Crea tutte le tabelle dei modelli che hanno ereditato Base
+engine = create_engine("mysql+pymysql://root:Password123!@127.0.0.1/db") # Create a MySQL database engine (://username:pwd@host/db_name)
+session = Session(bind=engine) # Create a session, to handle database
+Base.metadata.create_all(bind=engine) # Create the database tables defined in the Base class
 
 print("""
     CONTROL BADGE RE▲DER SYSTEM
@@ -23,7 +23,6 @@ print("""
 """)
 
 while True:
-    # Stampa il menu
     print("-" *10 + "Models Menu" + "-" *10)
     print("1 - ROLES")
     print("2 - USERS")

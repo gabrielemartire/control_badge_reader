@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, ForeignKey, Integer
-from sqlalchemy.orm import DeclarativeBase # ci da accesso alla dichiarazione base per i modelli che creiamo
+from sqlalchemy.orm import DeclarativeBase # it gives us access to the base declaration for the models we create
 
-#Base(DeclarativeBase) per far ereditare a Base i metodi di DeclarativeBase
+#Base(DeclarativeBase) to make Base inherit DeclarativeBase methods
 class Base(DeclarativeBase):
     pass
 

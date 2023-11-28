@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 def create_badge_reader(session: Session, badge_reader_info: dict):
     session.add(BadgeReader(**badge_reader_info))
     session.commit()
+    return badge_reader_info
 
 def retrieve_badge_reader(session: Session, badge_reader_id: int):
     sql_statement = select(BadgeReader).where(BadgeReader.id== badge_reader_id)
@@ -25,4 +26,4 @@ def delete_badge_reader(session: Session, badge_reader_id: int):
     sql_statement = delete(BadgeReader).where(BadgeReader.id== badge_reader_id)
     session.execute(sql_statement)
     session.commit()
-    return id
+    return badge_reader_id

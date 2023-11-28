@@ -6,7 +6,4 @@ def create_badge_reader_warning(session: Session, badge_reader_warning_info: dic
     session.execute(badge_readers_warnings.insert().values(badge_reader_warning_info))
     session.commit()
 
-# no select
-# no update
-
 # todo - delete cascade

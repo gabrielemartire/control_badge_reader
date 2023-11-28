@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 def create_user(session: Session, user_info: dict):
     session.add(User(**user_info))
     session.commit()
+    return user_info
 
 def retrieve_user(session: Session, user_id: int):
     sql_statement = select(User).where(User.id== user_id)

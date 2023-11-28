@@ -11,4 +11,4 @@ class Warning(Base):
     created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
     updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
     deleted_at: Mapped[str] = mapped_column(String(30), nullable=True)
-    badge_readers = relationship('BadgeReader', secondary=badge_readers_warnings, back_populates='warnings' ) # badge_readers n-n warnings
+    badge_readers = relationship('BadgeReader', secondary=badge_readers_warnings, back_populates='warnings' )

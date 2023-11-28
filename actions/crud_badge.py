@@ -6,12 +6,13 @@ from sqlalchemy.orm import Session
 def create_badge(session: Session, badge_info: dict):
     session.add(Badge(**badge_info))
     session.commit()
+    return badge_info.__dict__ if badge_info is not None else None
 
 def retrieve_badge(session: Session, badge_id: int):
     sql_statement = select(Badge).where(Badge.id == badge_id)
     badge = session.scalars(sql_statement).one_or_none()
     badge.__dict__["user"] = badge.user.full_name
-    return badge.__dict__
+    return badge.__dict__ if badge is not None else None
 
 def update_badge(session: Session, badge_id: int, badge_info: dict):
     badge_info["updated_at"] = datetime.now()

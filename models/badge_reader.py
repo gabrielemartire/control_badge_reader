@@ -11,7 +11,7 @@ class BadgeReader(Base):
     created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
     updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
     sector_id: Mapped[int] = mapped_column(ForeignKey("sectors.id"))
-    access = relationship("Access", back_populates="badge_reader") # badge reader 1-n access
-    sector = relationship("Sector", back_populates="badge_reader") # badge reader n-1 sector
-    roles = relationship('Role', secondary=badge_readers_roles, back_populates='badge_readers') # badge reader n-n roles
-    warnings = relationship('Warning', secondary=badge_readers_warnings, back_populates='badge_readers') # badge reader n-n warnings
+    access = relationship("Access", back_populates="badge_reader")
+    sector = relationship("Sector", back_populates="badge_reader")
+    roles = relationship('Role', secondary=badge_readers_roles, back_populates='badge_readers')
+    warnings = relationship('Warning', secondary=badge_readers_warnings, back_populates='badge_readers')

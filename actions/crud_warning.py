@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 def create_warning(session: Session, warning_info: dict): #todo
     session.add(Warning(**warning_info))
     session.commit()
+    return warning_info
 
 def retrieve_warning(session: Session, warning_id: int): #todo
     sql_statement = select(Warning).where(Warning.id== warning_id)
@@ -25,3 +26,4 @@ def delete_warning(session: Session, warning_id: int):
     sql_statement = update(Warning).where(Warning.id== warning_id).values({"deleted_at": datetime.now()})
     session.execute(sql_statement)
     session.commit()
+    return warning_id

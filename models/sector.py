@@ -10,6 +10,6 @@ class Sector(Base):
     under_uta_control: Mapped[bool] = mapped_column(default=True)
     created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
     updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
-    role_id: Mapped[int] = mapped_column(ForeignKey("roles.id")) # ruolo responsabile del setore
-    role = relationship("Role", back_populates="sector") # sector n-1 role
-    badge_reader = relationship("BadgeReader", back_populates="sector") # sector 1-n b_r
+    role_id: Mapped[int] = mapped_column(ForeignKey("roles.id"))
+    role = relationship("Role", back_populates="sector")
+    badge_reader = relationship("BadgeReader", back_populates="sector")

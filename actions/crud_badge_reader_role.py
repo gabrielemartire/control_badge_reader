@@ -6,7 +6,4 @@ def create_badge_reader_role(session: Session, badge_reader_role_info: dict):
     session.execute(badge_readers_roles.insert().values(badge_reader_role_info))
     session.commit()
 
-# no select
-# no update
-
 # todo - delete cascade

@@ -11,5 +11,5 @@ class User(Base):
     created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
     updated_at: Mapped[str] = mapped_column(String(30), nullable=True)
     deleted_at: Mapped[str] = mapped_column(String(30), nullable=True)
-    role = relationship("Role", back_populates="user") # user 1-n role 
-    badge = relationship("Badge", back_populates="user", uselist=False, cascade="all, delete-orphan") # user 1-n badge
+    role = relationship("Role", back_populates="user")
+    badge = relationship("Badge", back_populates="user", uselist=False, cascade="all, delete-orphan")

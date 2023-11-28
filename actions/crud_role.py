@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 def create_role(session: Session, role_info: dict):
     session.add(Role(**role_info))
     session.commit()
+    return role_info
 
 def retrieve_role(session: Session, role_id: int):
     sql_statement = select(Role).where(Role.id== role_id)

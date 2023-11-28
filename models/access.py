@@ -9,7 +9,7 @@ class Access(Base):
     timestamp_in: Mapped[str] = mapped_column(String(30), nullable=True)
     timestamp_out: Mapped[str] = mapped_column(String(30), nullable=True)
     created_at: Mapped[str] = mapped_column(String(30), nullable=False, default=datetime.now)
-    badge_id: Mapped[int] = mapped_column(ForeignKey("badges.id"), nullable=False) # badge utilizzato per lo scan
-    badge_reader_id: Mapped[int] = mapped_column(ForeignKey("badge_readers.id"), nullable=False) # badge reader che ha effettuato lo scan
-    badge = relationship("Badge", back_populates="access") # access 1-n badge
-    badge_reader = relationship("BadgeReader", back_populates="access") # access 1-n b_r
+    badge_id: Mapped[int] = mapped_column(ForeignKey("badges.id"), nullable=False)
+    badge_reader_id: Mapped[int] = mapped_column(ForeignKey("badge_readers.id"), nullable=False)
+    badge = relationship("Badge", back_populates="access")
+    badge_reader = relationship("BadgeReader", back_populates="access")

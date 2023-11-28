@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 def create_sector(session: Session, sector_info: dict):
     session.add(Sector(**sector_info))
     session.commit()
+    return sector_info
 
 def retrieve_sector(session: Session, sector_id: int):
     sql_statement = select(Sector).where(Sector.id== sector_id)
@@ -25,4 +26,4 @@ def delete_sector(session: Session, sector_id: int):
     sql_statement = delete(Sector).where(Sector.id== sector_id)
     session.execute(sql_statement)
     session.commit()
-    return id
+    return sector_id

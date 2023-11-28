@@ -11,40 +11,40 @@ from actions.crud_badge_reader_role import create_badge_reader_role
 from actions.crud_badge_reader_warning import create_badge_reader_warning
 
 
-def use_seed(session):
+def use_seeds(session):
 
-    # SEED ROLES
+    # SEEDs ROLES
     for r in ROLES:
         create_role(session = session, role_info = r)
 
-    # SEED USERS
+    # SEEDs USERS
     for u in USERS:
         create_user(session = session, user_info = u)
 
-    # SEED BADGES
+    # SEEDs BADGES
     for b in BADGES:
         create_badge(session = session, badge_info = b)
 
-    # SEED SECTORS
+    # SEEDs SECTORS
     for s in SECTORS:
         create_sector(session = session, sector_info = s)
 
-    # SEED BADGE_READERS
+    # SEEDs BADGE_READERS
     for br in BADGE_READERS:
         create_badge_reader(session = session, badge_reader_info = br)
 
-    # SEED WARNINGS
+    # SEEDs WARNINGS
     for w in WARNINGS:
         create_warning(session = session, warning_info = w)
 
-    # SEED ACCESSES
+    # SEEDs ACCESSES
     for a in ACCESSES:
         create_access(session = session, access_info = a)
 
-    # SEED BADGE_READERS_ROLES (join table)
+    # SEEDs BADGE_READERS_ROLES (join table)
     for brr in BADGE_READERS_ROLES:
         create_badge_reader_role(session = session, badge_reader_role_info = brr)
 
-    # SEED BADGE_READERS_WARNINGS (join table)
+    # SEEDs BADGE_READERS_WARNINGS (join table)
     for brw in BADGE_READERS_WARNINGS:
         create_badge_reader_warning(session = session, badge_reader_warning_info=brw)

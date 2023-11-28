@@ -41,7 +41,7 @@ Once `main.py` is launched, the 'models menu' selection screen will be shown:
 6 - SECTOR
 7 - WARNING
 8 - RELATIONS
-9 - SEED
+9 - SEEDs
 0 - EXIT
 select model:
 ```

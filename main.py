@@ -9,7 +9,7 @@ from cli.access_cli import access_submenu
 from cli.relations_cli import relation_submenu
 from cli.sector_cli import sector_submenu
 from cli.warning_cli import warning_submenu
-from db.use_seed import use_seed
+from db.use_seeds import use_seeds
 
 
 engine = create_engine("mysql+pymysql://root:Password123!@127.0.0.1/db")
@@ -33,7 +33,7 @@ while True:
     print("6 - SECTOR")
     print("7 - WARNING")
     print("8 - RELATIONS")
-    print("9 - SEED")
+    print("9 - SEEDs")
     print("0 - EXIT")
 
     model_selected = int(input("select model: "))
@@ -48,7 +48,7 @@ while True:
         case 6: sector_submenu(session)
         case 7: warning_submenu(session)
         case 8: relation_submenu(session)
-        case 9: use_seed(session)
+        case 9: use_seeds(session)
         case _: print("value not valid")
 
 

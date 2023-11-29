@@ -10,7 +10,7 @@ def relation_submenu(session):
         print("2 - create new badge_reader-warning relation")
         print("0 - back")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:

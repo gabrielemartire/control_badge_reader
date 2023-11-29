@@ -10,7 +10,7 @@ def access_submenu(session):
         print("3 - EXIT A SPECIFIC AREA WITH A SPECIFIC BADGE (update an access)")
         print("0 - back")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:

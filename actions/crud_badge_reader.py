@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from models.badge_reader import BadgeReader
 from sqlalchemy import select, update, delete
 from sqlalchemy.orm import Session
@@ -15,6 +15,7 @@ def retrieve_badge_reader(session: Session, badge_reader_id: int):
 
 def update_badge_reader(session: Session, badge_reader_id: int, badge_reader_info: dict):
     badge_reader_info["updated_at"] = datetime.now()
+    badge_reader_info["maintenance_at"] =(datetime.now() + timedelta(days=365 * 2))
     sql_statement = update(BadgeReader).where(BadgeReader.id== badge_reader_id).values(**badge_reader_info)
     session.execute(sql_statement)
     session.commit()

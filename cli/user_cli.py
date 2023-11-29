@@ -11,7 +11,7 @@ def user_submenu(session):
         print("4 - delete user")
         print("0 - back")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:

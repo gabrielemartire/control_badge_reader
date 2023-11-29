@@ -11,7 +11,7 @@ def badge_submenu(session):
         print("4 - delete badge")
         print("0 - BACK")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:

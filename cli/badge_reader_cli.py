@@ -1,6 +1,7 @@
 
 from actions.crud_badge_reader import create_badge_reader, retrieve_badge_reader, update_badge_reader, delete_badge_reader
 #from db.seed import BADGE_READERS
+from datetime import datetime, timedelta
 
 def badge_reader_submenu(session):
     while True:
@@ -11,7 +12,7 @@ def badge_reader_submenu(session):
         print("4 - delete badge reader")
         print("0 - back")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:
@@ -25,6 +26,7 @@ def badge_reader_submenu(session):
                 print(retrieve_badge_reader(session = session, badge_reader_id = badge_reader_id))
 
             case 3:
+                print("Warning: this will update the maintenance_ay field to "+ str(datetime.now() + timedelta(days=365 * 2)))
                 badge_reader_id = int(input("insert badge reader id: "))
                 label_selected = input("insert badge reader label: ")
                 sector_id_selected = int(input("insert sector id: "))

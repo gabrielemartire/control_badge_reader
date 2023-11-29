@@ -11,13 +11,15 @@ def sector_submenu(session):
         print("4 - delete sector")
         print("0 - back")
 
-        crud_selected = input("select action: ")
+        crud_selected = int(input("select action: "))
 
         match crud_selected:
             case 1:
                 label_selected = input("insert sector label: ")
                 role_id_selected = int(input("insert role id: "))
-                new_sector_dict = {"label": label_selected, "role_id": role_id_selected}
+                under_uta_control_input = input("is an under_uta_control sector? (1/0): ") 
+                under_uta_control_selected = True if under_uta_control_input == '1' else False
+                new_sector_dict = {"label": label_selected, "role_id": role_id_selected, "under_uta_control": under_uta_control_selected}
                 print(create_sector(session=session, sector_info=new_sector_dict))
 
             case 2:
@@ -28,7 +30,9 @@ def sector_submenu(session):
                 sector_id = int(input("insert sector id: "))
                 label_selected = input("insert sector label: ")
                 role_id_selected = int(input("insert role id: "))
-                upd_sector_dict = {"label": label_selected, "role_id": role_id_selected}
+                under_uta_control_input = input("is an under_uta_control sector? (1/0): ") 
+                under_uta_control_selected = True if under_uta_control_input == '1' else False
+                upd_sector_dict = {"label": label_selected, "role_id": role_id_selected, "under_uta_control": under_uta_control_selected}
                 print(update_sector(session = session, sector_id = sector_id, sector_info=upd_sector_dict))
 
             case 4:

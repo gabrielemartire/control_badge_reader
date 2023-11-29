@@ -12,19 +12,19 @@ def relation_submenu(session):
 
         crud_selected = input("select action: ")
 
-        if crud_selected == "1":
-            badge_reader_id = input("insert badge reader id: ")
-            role_id = int(input("insert role id: "))
-            badge_reader_role_info = {"badge_reader_id": badge_reader_id, "role_id": role_id}
-            print(create_badge_reader_role(session=session, badge_reader_role_info=badge_reader_role_info))
+        match crud_selected:
+            case 1:
+                badge_reader_id = int(input("insert badge reader id: "))
+                role_id = int(input("insert role id: "))
+                badge_reader_role_info = {"badge_reader_id": badge_reader_id, "role_id": role_id}
+                print(create_badge_reader_role(session=session, badge_reader_role_info=badge_reader_role_info))
 
-        elif crud_selected == "2":
-            warning_id = input("insert warning id: ")
-            badge_reader_id = int(input("insert  badge reader id: "))
-            badge_reader_warning_info = {"warning_id": warning_id, "badge_reader_id": badge_reader_id}
-            print(create_badge_reader_warning(session=session, badge_reader_warning_info=badge_reader_warning_info))
+            case 2:
+                warning_id = int(input("insert warning id: "))
+                badge_reader_id = int(input("insert  badge reader id: "))
+                badge_reader_warning_info = {"warning_id": warning_id, "badge_reader_id": badge_reader_id}
+                print(create_badge_reader_warning(session=session, badge_reader_warning_info=badge_reader_warning_info))
 
-        elif crud_selected == "0":
-            break
-        else:
-            print("ERROR")
+            case 0: break
+
+            case _: print("ERROR")

@@ -13,28 +13,28 @@ def role_submenu(session):
 
         crud_selected = input("select action: ")
 
-        if crud_selected == "1":
-            label_selected = input("insert role label: ")
-            night_availability_selected = bool(input("is a night_availability role? (1/0): "))
-            new_role_dict = {"label": label_selected, "night_availability_selected": night_availability_selected}
-            print(create_role(session=session, role_info=new_role_dict))
+        match crud_selected:
+            case 1:
+                label_selected = input("insert role label: ")
+                night_availability_selected = bool(input("is a night_availability role? (1/0): "))
+                new_role_dict = {"label": label_selected, "night_availability_selected": night_availability_selected}
+                print(create_role(session=session, role_info=new_role_dict))
 
-        elif crud_selected == "2":
-            role_id = input("insert role id: ")
-            print(retrieve_role(session = session, role_id = role_id))
+            case 2:
+                role_id = int(input("insert role id: "))
+                print(retrieve_role(session = session, role_id = role_id))
 
-        elif crud_selected == "3":
-            role_id = input("insert role id: ")
-            label_selected = input("insert role label: ")
-            night_availability_selected = bool(input("is a night_availability role? (1/0): "))
-            upd_role_dict = {"label_selected": label_selected, "night_availability_selected": night_availability_selected}
-            print(update_role(session = session, role_id = role_id, role_info=upd_role_dict))
+            case 3:
+                role_id = int(input("insert role id: "))
+                label_selected = input("insert role label: ")
+                night_availability_selected = bool(input("is a night_availability role? (1/0): "))
+                upd_role_dict = {"label_selected": label_selected, "night_availability_selected": night_availability_selected}
+                print(update_role(session = session, role_id = role_id, role_info=upd_role_dict))
 
-        elif crud_selected == "4":
-            role_id = input("insert role id: ")
-            print(delete_role(session = session, role_id = role_id))
-        elif crud_selected == "0":
-            print("BACK")
-            break
-        else:
-            print("ERROR")
+            case 4:
+                role_id = int(input("insert role id: "))
+                print(delete_role(session = session, role_id = role_id))
+
+            case 0: break
+
+            case _: print("ERROR")

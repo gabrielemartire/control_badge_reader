@@ -13,27 +13,28 @@ def sector_submenu(session):
 
         crud_selected = input("select action: ")
 
-        if crud_selected == "1":
-            label_selected = input("insert sector label: ")
-            role_id_selected = int(input("insert role id: "))
-            new_sector_dict = {"label": label_selected, "role_id": role_id_selected}
-            print(create_sector(session=session, sector_info=new_sector_dict))
+        match crud_selected:
+            case 1:
+                label_selected = input("insert sector label: ")
+                role_id_selected = int(input("insert role id: "))
+                new_sector_dict = {"label": label_selected, "role_id": role_id_selected}
+                print(create_sector(session=session, sector_info=new_sector_dict))
 
-        elif crud_selected == "2":
-            sector_id = input("insert sector id: ")
-            print(retrieve_sector(session = session, sector_id = sector_id))
+            case 2:
+                sector_id = int(input("insert sector id: "))
+                print(retrieve_sector(session = session, sector_id = sector_id))
 
-        elif crud_selected == "3":
-            sector_id = input("insert sector id: ")
-            label_selected = input("insert sector label: ")
-            role_id_selected = int(input("insert role id: "))
-            upd_sector_dict = {"label": label_selected, "role_id": role_id_selected}
-            print(update_sector(session = session, sector_id = sector_id, sector_info=upd_sector_dict))
+            case 3:
+                sector_id = int(input("insert sector id: "))
+                label_selected = input("insert sector label: ")
+                role_id_selected = int(input("insert role id: "))
+                upd_sector_dict = {"label": label_selected, "role_id": role_id_selected}
+                print(update_sector(session = session, sector_id = sector_id, sector_info=upd_sector_dict))
 
-        elif crud_selected == "4":
-            sector_id = input("insert sector id: ")
-            print(delete_sector(session = session, sector_id = sector_id))
-        elif crud_selected == "0":
-            break
-        else:
-            print("ERROR")
+            case 4:
+                sector_id = int(input("insert sector id: "))
+                print(delete_sector(session = session, sector_id = sector_id))
+
+            case 0: break
+
+            case _: print("ERROR")

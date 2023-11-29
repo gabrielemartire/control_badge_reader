@@ -1,7 +1,7 @@
 
 # CONTROL BADGE RE▲DER SYSTEM
 
-## ***Project decription***
+## ***Project description***
 > _The chosen case study is about the management of access via employee identification badges in a private research institute, divided into sectors, which are in turn divided into smaller areas._
 + Gabriele Martire
 + Corso di studi in Ingegneria Industriale L-9
@@ -49,9 +49,9 @@ Subsequently we will choose the action from those available (`5` in this example
 the 'available actions' selection screen will be shown:
 ```python
 available actions:
-1 - ENTER A SPECIFICA AREA WITH A SPECIFIC BADGE (create new access)
+1 - ENTER A SPECIFIC AREA WITH A SPECIFIC BADGE (create new access)
 2 - SHOW ACCESS LOG (retrieve an access)
-3 - EXIT A SPECIFICA AREA WITH A SPECIFIC BADGE (update an access)
+3 - EXIT A SPECIFIC AREA WITH A SPECIFIC BADGE (update an access)
 0 - back
 select action:
 ```

@@ -48,6 +48,6 @@ while True:
         case 7: warning_submenu(session)
         case 8: relation_submenu(session)
         case 9: use_seeds(session)
-        case _: print("value not valid")
+        case _: print("invalid choice")
 
 

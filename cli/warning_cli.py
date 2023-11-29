@@ -11,28 +11,28 @@ def warning_submenu(session):
 
         crud_selected = input("select action: ")
 
-        if crud_selected == "1":
-            code_name_selected = input("insert warning code name: ")
-            descr_selected = input("insert warning description: ")
-            new_role_dict = {"code_name": code_name_selected, "description": descr_selected}
-            print(create_warning(session = session, warning_info = new_role_dict))
+        match crud_selected:
+            case 1:
+                code_name_selected = input("insert warning code name: ")
+                descr_selected = input("insert warning description: ")
+                new_role_dict = {"code_name": code_name_selected, "description": descr_selected}
+                print(create_warning(session = session, warning_info = new_role_dict))
 
-        elif crud_selected == "2":
-            warning_id = input("insert insert warning id: ")
-            print(retrieve_warning(session = session, warning_id = warning_id))
+            case 2:
+                warning_id = int(input("insert insert warning id: "))
+                print(retrieve_warning(session = session, warning_id = warning_id))
 
-        elif crud_selected == "3":
-            warning_id = input("insert warning id: ")
-            code_name_selected = input("insert warning code name: ")
-            descr_selected = input("insert warning description: ")
-            upd_warning_dict = {"code_name": code_name_selected, "description": descr_selected}
-            print(update_warning(session = session, warning_id = warning_id, warning_info = upd_warning_dict))
+            case 3:
+                warning_id = int(input("insert warning id: "))
+                code_name_selected = input("insert warning code name: ")
+                descr_selected = input("insert warning description: ")
+                upd_warning_dict = {"code_name": code_name_selected, "description": descr_selected}
+                print(update_warning(session = session, warning_id = warning_id, warning_info = upd_warning_dict))
 
-        elif crud_selected == "4":
-            warning_id = input("insert warning id: ")
-            print(delete_warning(session = session, warning_id = warning_id))
+            case 4:
+                warning_id = int(input("insert warning id: "))
+                print(delete_warning(session = session, warning_id = warning_id))
 
-        elif crud_selected == "0":
-            break
-        else:
-            print("ERROR")
+            case 0: break
+
+            case _: print("ERROR")

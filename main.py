@@ -17,7 +17,7 @@ session = Session(bind=engine) # Create a session, to handle database
 Base.metadata.create_all(bind=engine) # Create the database tables defined in the Base class
 
 print("""
-    CONTROL BADGE RE▲DER SYSTEM
+    CONTROL BADGE RE▲DER
     Gabriele Martire
     Matr.: IN09000637
 """)

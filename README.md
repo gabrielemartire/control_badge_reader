@@ -1,5 +1,5 @@
 
-# CONTROL BADGE RE▲DER SYSTEM
+# CONTROL BADGE RE▲DER
 
 ## ***Project description***
 > _The chosen case study is about the management of access via employee identification badges in a private research institute, divided into sectors, which are in turn divided into smaller areas._

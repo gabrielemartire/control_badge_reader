@@ -13,5 +13,5 @@ class BadgeReader(Base):
     sector_id: Mapped[int] = mapped_column(ForeignKey("sectors.id"))
     access = relationship("Access", back_populates="badge_reader")
     sector = relationship("Sector", back_populates="badge_reader")
-    roles = relationship('Role', secondary=badge_readers_roles, back_populates='badge_readers')
+    roles = relationship("Role", secondary=badge_readers_roles, back_populates="badge_readers")
     warnings = relationship('Warning', secondary=badge_readers_warnings, back_populates='badge_readers')

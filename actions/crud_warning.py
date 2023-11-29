@@ -1,6 +1,7 @@
 from datetime import datetime
 from models.warning import Warning
 from sqlalchemy import select, update
+from models.base import badge_readers_warnings
 from sqlalchemy.orm import Session
 
 def create_warning(session: Session, warning_info: dict):
@@ -24,7 +25,14 @@ def update_warning(session: Session, warning_id: int, warning_info: dict):
 
 # soft seltes warning
 def delete_warning(session: Session, warning_id: int):
-    sql_statement = update(Warning).where(Warning.id== warning_id).values({"deleted_at": datetime.now()})
-    session.execute(sql_statement)
-    session.commit()
+    warning = session.query(Warning).get(warning_id)
+
+    # we cannot proceed with the delete cascade cause we are using an association table without a dedicated BadgeReaderRole model
+    # in this case it is not possible to use delete-orphan for many-to-many relationships
+    # so we proceed by first deleting the records in the join table and then soft delete the specific warning
+    if warning:
+        session.execute(badge_readers_warnings.delete().where(badge_readers_warnings.c.warning_id == warning_id))
+        warning.deleted_at = datetime.now()
+        session.commit()
+
     return warning_id

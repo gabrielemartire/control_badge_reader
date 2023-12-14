@@ -6,29 +6,30 @@
 + Gabriele Martire
 + Corso di studi in Ingegneria Industriale L-9
 + Etivities per ‘Basi di Dati’
++ [Report sviluppo progetto](https://github.com/gabrielemartire/control_badge_reader/blob/master/c_b_r_report.pdf)
 
 ## ***Installation***
 ### PyMySQL and SQLAlchemy
 ```
-C:\Users\GM\Desktop\code>pip install PyMySQL
+>pip install PyMySQL
 ```
 ```
-C:\Users\GM\Desktop\code>pip install SQLAlchemy
+>pip install SQLAlchemy
 ```
 ### cryptography 
 > [!WARNING]
 > may also require cryptography to be installed.
 ```
-C:\Users\GM\Desktop\code>pip install cryptography
+>pip install cryptography
 ```
 ## ***Run***
 1) ### activate _env_
 ```
-C:\Users\GM\Desktop\code>env\Scripts\activate
+>env\Scripts\activate
 ```
 2) ### execute code
 ```
-(env) C:\Users\GM\Desktop\code>python main.py
+(env) >python main.py
 ```
 Once `main.py` is launched, the 'models menu' selection screen will be shown:
 ```python
@@ -65,7 +66,7 @@ Obtaining authorization to enter:
 ```python
 authorized
 ```
-3) ### seed
+3) ### seed :shipit:
 > [!IMPORTANT]
 > It is also possible to use seed to quickly generate useful data with different combinations of values for test.
 ```python
